@@ -1,18 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="978b556b-e4dc-41b6-b0b2-47b0823d7065" name="Changes" comment="init projet heroes vs monsters">
-      <change afterPath="$PROJECT_DIR$/src/bf/java/ex/Character.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/bf/java/ex/Dice.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/bf/java/ex/Dragonnet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/bf/java/ex/Dwarf.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/bf/java/ex/Hero.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/bf/java/ex/Human.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/bf/java/ex/Monster.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/bf/java/ex/Orc.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/bf/java/ex/Wolf.java" afterDir="false" />
+    <list default="true" id="978b556b-e4dc-41b6-b0b2-47b0823d7065" name="Changes" comment="new classes and interfaces + Dice class implementation">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/bf/java/ex/GameMaster.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/bf/java/ex/mob/Character.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/bf/java/ex/mob/Dragonet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/bf/java/ex/mob/Dwarf.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/bf/java/ex/mob/Hero.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/bf/java/ex/mob/Human.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/bf/java/ex/mob/Monster.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/bf/java/ex/mob/Orc.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/bf/java/ex/mob/Wolf.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bf/java/ex/Character.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bf/java/ex/Dice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bf/java/ex/Dice.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bf/java/ex/Dragonnet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bf/java/ex/Dwarf.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bf/java/ex/Hero.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bf/java/ex/Human.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/bf/java/ex/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bf/java/ex/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bf/java/ex/Monster.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bf/java/ex/Orc.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bf/java/ex/Wolf.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,13 +49,34 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false"
   }
-}</component>
+}]]></component>
+  <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="bf.java.ex.Main" />
+      <module name="Heroes_VS_Monsters" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="bf.java.ex.mob.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.bf.java.ex.Main" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -55,7 +86,7 @@
       <option name="presentableId" value="Default" />
       <updated>1653405083432</updated>
       <workItem from="1653405087621" duration="251000" />
-      <workItem from="1653405618385" duration="4214000" />
+      <workItem from="1653405618385" duration="16275000" />
     </task>
     <task id="LOCAL-00001" summary="init projet heroes vs monsters">
       <created>1653405201243</created>
@@ -64,7 +95,14 @@
       <option name="project" value="LOCAL" />
       <updated>1653405201244</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="new classes and interfaces + Dice class implementation">
+      <created>1653412900566</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1653412900566</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -83,6 +121,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="init projet heroes vs monsters" />
-    <option name="LAST_COMMIT_MESSAGE" value="init projet heroes vs monsters" />
+    <MESSAGE value="new classes and interfaces + Dice class implementation" />
+    <option name="LAST_COMMIT_MESSAGE" value="new classes and interfaces + Dice class implementation" />
   </component>
 </project>

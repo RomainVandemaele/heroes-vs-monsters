@@ -5,17 +5,24 @@ import java.security.SecureRandom;
 public class Dice {
 
     private SecureRandom randomizer;
+    private final int min;
+    private final int max;
 
-    public Dice() {
+    public Dice(int minNumber,int maxNumber) {
+        this.min = minNumber;
+        this.max = maxNumber;
         randomizer = new SecureRandom();
-        randomizer.nextInt(10);
     }
 
-    public byte throwDice(int nface,int nThrows) {
-        byte result = 0;
-        for (int i=0;i<nThrows;i++) {
-            result += randomizer.nextInt(nface) + 1;
-        }
-        return result;
+    public int getMin() {
+        return min;
     }
+    public int getMax() {
+        return max;
+    }
+
+    public int throwDice() {
+        return  (min + randomizer.nextInt(max-min+1) );
+    }
+
 }
