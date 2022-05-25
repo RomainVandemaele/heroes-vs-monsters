@@ -14,9 +14,13 @@ public class GameMaster {
 
     private Map map;
 
+    private Command[] commands;
+    private Command command;
+
     public GameMaster() {
         map = new Map(15);
         initGame();
+        map.display();
         gameLoop();
     }
 
@@ -26,9 +30,8 @@ public class GameMaster {
         while (answer!=1 && answer!=2) {
             System.out.println("Are you a human(1) or a dwarf(2) ?");
             answer = myScanner.nextInt();
-            // TODO: 25-05-22 put real and non overlapping positions
-            int posX = 0;
-            int posY = 0;
+            int posX = r.nextInt(map.getSize());
+            int posY = r.nextInt(map.getSize());
             if(answer==1) {
                 hero = new Human(posX,posY);
             } else if (answer==2) {
@@ -43,8 +46,8 @@ public class GameMaster {
     private void generateEnemy() {
         int monsterIndex = r.nextInt(3);
         // TODO: 25-05-22 put real and non overlapping positions
-        int posX = 0;
-        int posY = 0;
+        int posX = r.nextInt(map.getSize());
+        int posY = r.nextInt(map.getSize());
         switch (monsterIndex) {
             case 0 :
                 enemy = new Wolf(posX,posY);
@@ -59,18 +62,28 @@ public class GameMaster {
 
     private void gameLoop() {
         while (!hero.isDead()) {
-
-            System.out.printf("You are now facing a %s.\n",enemy.toString());
-            while (!hero.isDead() && !enemy.isDead()) {
-                fightTurn();
+            while (!map.nearMonster()) {
+                map.display();
+                Scanner myScanner = new Scanner(System.in);
+                System.out.printf("In which direction would you like to move ? (z;q;s;d)");
+                char decision = (char) myScanner.nextInt();
+                command = new MoveCharactereCommand(hero,decision);
+                command.execute();
             }
-            if(!hero.isDead()) {
-                fightEnd();
-            }
+            fight();
         }
         endGame();
     }
 
+    private void fight() {
+        System.out.printf("You are now facing a %s.\n",enemy.toString());
+        while (!hero.isDead() && !enemy.isDead()) {
+            fightTurn();
+        }
+        if(!hero.isDead()) {
+            fightEnd();
+        }
+    }
     private void fightEnd() {
         System.out.printf("\n\nCongratulations your slained the %s.\nYou earned %d golds and %d leathers.\nNonetheless, the next monster is awaiting.\n\n\n",enemy.toString(),enemy.getGold(),enemy.getLeather());
         enemyCount++;
@@ -103,7 +116,9 @@ public class GameMaster {
 
     public void initGame() {
         generateHero();
+        map.setHero(hero);
         generateEnemy();
+        map.addMonster(enemy);
     }
 
     private void endGame() {

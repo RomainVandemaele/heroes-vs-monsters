@@ -4,9 +4,9 @@ import bf.java.ex.delegate.Action;
 
 public class Main {
     public static void main(String[] args) {
-        //GameMaster gm = new GameMaster();
+        GameMaster gm = new GameMaster();
         //Spell s = new Spell(2,5);
-        System.out.println(-1%12);
+
 
         //demo(Map::Deplacer)
         //demo(pos -> map.deplacer);

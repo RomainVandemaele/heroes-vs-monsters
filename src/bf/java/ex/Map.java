@@ -19,15 +19,28 @@ public class Map {
         return SIZE;
     }
 
+    public void setHero(Hero hero) {
+        this.hero = hero;
+    }
+
+    public boolean nearMonster() {
+        return false;
+    }
+
+    public void addMonster(Monster monster) {
+        monsters.add(monster);
+    }
+
     public void display() {
         for (int i=0;i<SIZE;++i) {
             for(int j=0;j<SIZE;++j) {
                 if(hero.getPositionX()==i && hero.getPositionY()==j) {
-                    System.out.printf("H");
+                    System.out.printf("H ");
                 }else  {
-                    System.out.printf("-");
+                    System.out.printf("- ");
                 }
             }
+            System.out.printf("\n");
         }
     }
 

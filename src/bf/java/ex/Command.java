@@ -1,5 +1,7 @@
 package bf.java.ex;
 
+import bf.java.ex.mob.Character;
+
 public abstract class Command {
     protected Character receiver;
 
@@ -8,4 +10,5 @@ public abstract class Command {
     }
 
     public abstract void execute();
+
 }

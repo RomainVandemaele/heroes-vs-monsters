@@ -1,29 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="978b556b-e4dc-41b6-b0b2-47b0823d7065" name="Changes" comment="new classes and interfaces + Dice class implementation">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/bf/java/ex/GameMaster.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/bf/java/ex/mob/Character.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/bf/java/ex/mob/Dragonet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/bf/java/ex/mob/Dwarf.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/bf/java/ex/mob/Hero.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/bf/java/ex/mob/Human.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/bf/java/ex/mob/Monster.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/bf/java/ex/mob/Orc.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/bf/java/ex/mob/Wolf.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bf/java/ex/Character.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bf/java/ex/Dice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bf/java/ex/Dice.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bf/java/ex/Dragonnet.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bf/java/ex/Dwarf.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bf/java/ex/Hero.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bf/java/ex/Human.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bf/java/ex/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bf/java/ex/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bf/java/ex/Monster.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bf/java/ex/Orc.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bf/java/ex/Wolf.java" beforeDir="false" />
-    </list>
+    <list default="true" id="978b556b-e4dc-41b6-b0b2-47b0823d7065" name="Changes" comment="new classes and interfaces + Dice class implementation" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -54,7 +32,8 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false"
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/STG0805/Documents/heroes-vs-monsters"
   }
 }]]></component>
   <component name="RunManager">
@@ -73,7 +52,7 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.bf.java.ex.Main" />
+        <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
   </component>
@@ -87,6 +66,7 @@
       <updated>1653405083432</updated>
       <workItem from="1653405087621" duration="251000" />
       <workItem from="1653405618385" duration="16275000" />
+      <workItem from="1653485213764" duration="1954000" />
     </task>
     <task id="LOCAL-00001" summary="init projet heroes vs monsters">
       <created>1653405201243</created>
