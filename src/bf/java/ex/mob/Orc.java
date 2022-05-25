@@ -6,8 +6,8 @@ public class Orc extends Monster {
 
     private static int FOR_BONUS = 1;
 
-    public Orc() {
-        super();
+    public Orc(int posX,int posY) {
+        super(posX,posY);
         gold = d6.throwDice();
     }
 

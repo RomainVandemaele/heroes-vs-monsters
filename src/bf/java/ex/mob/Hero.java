@@ -1,17 +1,24 @@
 package bf.java.ex.mob;
 
+import bf.java.ex.Spell;
 import bf.java.ex.mob.Character;
 
 public class Hero extends Character {
 
-
-    public Hero() {
-        super();
+    private int mp;
+    private Spell[] spells;
+    public Hero(int posX,int posY) {
+        super(posX, posY);
+        mp = d6.throwDice();
     }
 
     public void restoreHealth() {
         hp = getMaxHealth();
     }
+
+    //public void throwSpell(int index) {
+    //    if(spells[index]!=null) {}
+    //}
 
     @Override
     public void hit(Character enemy, int damage) {

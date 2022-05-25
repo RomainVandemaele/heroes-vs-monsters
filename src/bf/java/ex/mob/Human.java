@@ -6,8 +6,8 @@ public class Human extends Hero {
     static final int FOR_BONUS = 2;
     static final int END_BONUS = 1;
 
-    public Human() {
-        super();
+    public Human(int posX,int posY) {
+        super(posX,posY);
         //maxHealth = getEndurance() + computeModifier(getEndurance()+END_BONUS);
         //restoreHealth();
     }

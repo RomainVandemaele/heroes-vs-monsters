@@ -13,7 +13,10 @@ public class Character {
     protected int gold = 0;
     protected int leather = 0;
 
-    public Character() {
+    protected int positionX;
+    protected int positionY;
+
+    public Character(int posX,int posY) {
         d4 = new Dice(1,4);
         d6 = new Dice(1,6);
         int minEndurance = 6;
@@ -34,6 +37,35 @@ public class Character {
         force -= minForce;
         maxHealth = endurance + computeModifier(endurance);
         hp = maxHealth;
+
+        positionX = posX;
+        positionY = posY;
+
+    }
+
+    public void movePosition(char direction) { //direction : z,q,s,d
+        switch (direction) {
+            case 'z' :
+                positionY--;
+                break;
+            case 'q' :
+                positionY++;
+                break;
+            case 's' :
+                positionX--;
+                break;
+            case 'd' :
+                positionX++;
+                break;
+        }
+
+    }
+
+    public int getPositionX() {
+        return positionX;
+    }
+    public int getPositionY() {
+        return positionY;
     }
 
     public int computeModifier(int value) {

@@ -4,8 +4,8 @@ import bf.java.ex.mob.Monster;
 
 public class Wolf extends Monster {
 
-    public Wolf() {
-        super();
+    public Wolf(int posX,int posY) {
+        super(posX,posY);
         leather = d6.throwDice();
     }
 
