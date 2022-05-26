@@ -15,4 +15,9 @@ public class Human extends Hero {
     public int getDamage() {
         return getBaseDamage() + computeModifier(getForce()+FOR_BONUS);
     }
+
+    @Override
+    public String toString() {
+        return "H";
+    }
 }

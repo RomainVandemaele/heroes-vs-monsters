@@ -11,4 +11,9 @@ public class Dwarf extends Hero {
         //maxHealth = getEndurance() + computeModifier(getEndurance()+END_BONUS);
         //restoreHealth();
     }
+
+    @Override
+    public String toString() {
+        return "D";
+    }
 }

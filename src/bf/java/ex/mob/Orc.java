@@ -17,7 +17,10 @@ public class Orc extends Monster {
     }
 
 
-    public String toString() {
+    public String getName() {
         return "Orc";
+    }
+    public String toString() {
+        return "O";
     }
 }

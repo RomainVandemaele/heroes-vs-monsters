@@ -2,7 +2,7 @@ package bf.java.ex.mob;
 
 import bf.java.ex.Dice;
 
-public class Character {
+public abstract class Character {
     protected int hp;
     private int maxHealth;
     private int endurance;
@@ -43,22 +43,9 @@ public class Character {
 
     }
 
-    public void movePosition(char direction) { //direction : z,q,s,d
-        switch (direction) {
-            case 'z' :
-                positionY--;
-                break;
-            case 'q' :
-                positionY++;
-                break;
-            case 's' :
-                positionX--;
-                break;
-            case 'd' :
-                positionX++;
-                break;
-        }
-
+    public void changePosition(int newX,int newY) { //direction : z,q,s,d
+        this.positionX = newX;
+        this.positionY = newY;
     }
 
     public int getPositionX() {

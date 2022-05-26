@@ -7,7 +7,6 @@ public class Main {
         GameMaster gm = new GameMaster();
         //Spell s = new Spell(2,5);
 
-
         //demo(Map::Deplacer)
         //demo(pos -> map.deplacer);
         demo(System.out::println);

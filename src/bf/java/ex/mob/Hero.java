@@ -3,7 +3,7 @@ package bf.java.ex.mob;
 import bf.java.ex.Spell;
 import bf.java.ex.mob.Character;
 
-public class Hero extends Character {
+public abstract class Hero extends Character {
 
     private int mp;
     private Spell[] spells;
@@ -35,5 +35,10 @@ public class Hero extends Character {
 
     private void addLeather(int leather) {
         this.leather += leather;
+    }
+
+    @Override
+    public String toString() {
+        return "H";
     }
 }

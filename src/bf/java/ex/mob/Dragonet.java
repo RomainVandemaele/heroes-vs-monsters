@@ -12,7 +12,12 @@ public class Dragonet extends Monster {
         leather = d4.throwDice();
     }
 
-    public String toString() {
+    @Override
+    public String getName() {
         return "Dragonet";
+    }
+
+    public String toString() {
+        return "D";
     }
 }

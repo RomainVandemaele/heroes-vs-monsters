@@ -9,7 +9,12 @@ public class Wolf extends Monster {
         leather = d6.throwDice();
     }
 
-    public String toString() {
+    @Override
+    public String getName() {
         return "Wolf";
+    }
+
+    public String toString() {
+        return "W";
     }
 }
