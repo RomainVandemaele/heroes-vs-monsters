@@ -77,12 +77,13 @@ public abstract class Character {
         return getBaseDamage() + computeModifier(force);
     }
 
-    public void hit(Character enemy,int damage) {
-        //int damage = getDamage();
+    public void hit(Character enemy) {
+        final int damage = getDamage();
+        System.out.printf("%s did %d damage\n",this.getName(),damage);
         enemy.getHit(damage);
     }
 
-    private void getHit(int damage) {
+    protected void getHit(int damage) {
         hp-=damage;
         if(hp <0) { hp = 0; }
     }
@@ -114,4 +115,7 @@ public abstract class Character {
     public int getGold() {
         return gold;
     }
+
+
+    public abstract String getName();
 }

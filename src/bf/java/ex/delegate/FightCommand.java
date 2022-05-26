@@ -12,13 +12,13 @@ public class FightCommand extends Command<Character> {
         this.enemy = enemy;
     }
 
-    public void changeEnemy(Character enemy) {
-        this.enemy = enemy;
-    }
+//    public void changeEnemy(Character enemy) {
+//        this.enemy = enemy;
+//    }
 
 
     @Override
     public void execute() {
-        receiver.hit(enemy,receiver.getDamage());
+        receiver.hit(enemy);
     }
 }

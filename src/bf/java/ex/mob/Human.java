@@ -20,4 +20,9 @@ public class Human extends Hero {
     public String toString() {
         return "H";
     }
+
+    @Override
+    public String getName() {
+        return "Human";
+    }
 }

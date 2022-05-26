@@ -6,15 +6,16 @@ import java.util.Scanner;
 
 public class Spell {
     // TODO: 25-05-22 : Generator of spell names
-    private int mpCost;
+    private final int mpCost;
     private int damage;
     private Dice d4;
     private Dice d6;
     private String name;
 
-    public Spell(int mpCost,int damage) {
-        this.mpCost = mpCost;
-        this.damage = damage;
+
+    public Spell() {
+        d6 = new Dice(1,6);
+        this.mpCost = d6.throwDice();
         generateName();
     }
 
@@ -39,7 +40,7 @@ public class Spell {
         }
     }
     public int getDamage() {
-        return damage;
+        return d6.throwDice();
     }
 
     public int getMpCost() {
