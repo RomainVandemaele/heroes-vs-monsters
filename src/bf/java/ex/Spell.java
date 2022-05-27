@@ -14,8 +14,9 @@ public class Spell {
 
 
     public Spell() {
+        d4 =  new Dice(1,4);
         d6 = new Dice(1,6);
-        this.mpCost = d6.throwDice();
+        this.mpCost = d4.throwDice();
         generateName();
     }
 

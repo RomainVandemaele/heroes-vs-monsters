@@ -1,5 +1,6 @@
 package bf.java.ex;
 
+import bf.java.ex.delegate.MonstersCreator;
 import bf.java.ex.mob.*;
 
 import java.beans.PropertyEditorManager;
@@ -15,11 +16,14 @@ public class Map {
     private Hero hero;
     private Monster enemy = null;
 
+    private MonstersCreator monsterGenerator;
+
     public Map(int size) {
         SIZE = size;
         SecureRandom sr = new SecureRandom();
         N_MONSTERS = 5 + sr.nextInt(size/2);
         //N_MONSTERS = 25;
+        monsterGenerator = new MonstersCreator();
         generateMonster();
     }
 
@@ -34,21 +38,7 @@ public class Map {
             while(n>0 && j < SIZE) {
                 int posX = Math.min( i + sr.nextInt(step), SIZE-1 );
                 int posY = Math.min( j + sr.nextInt(step),SIZE-1 );
-                //System.out.printf(" (%d %d) %d =>  Monster at %d %d\n",i,j,step,posX,posY);
-                int type = sr.nextInt(3);
-                Monster monster;
-                switch (type) {
-                    case 0 :
-                        monster = new Wolf(posX,posY);
-                        break;
-                    case 1 :
-                        monster = new Dragonet(posX,posY);
-                        break;
-                    default :
-                        monster = new Orc(posX,posY);
-                        break;
-                }
-                monsters.add(monster);
+                monsters.add(monsterGenerator.createMobs(posX,posY));
                 n--;
                 j+=step;
             }

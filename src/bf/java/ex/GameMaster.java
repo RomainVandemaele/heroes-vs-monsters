@@ -27,7 +27,6 @@ public class GameMaster {
     public GameMaster() {
 
         initGame();
-        //map.display();
         gameLoop();
     }
 
@@ -47,24 +46,9 @@ public class GameMaster {
         }
     }
 
-//    private void generateEnemy() {
-//        int monsterIndex = r.nextInt(3);
-//        int posX = r.nextInt(map.getSize());
-//        int posY = r.nextInt(map.getSize());
-//        switch (monsterIndex) {
-//            case 0 :
-//                enemy = new Wolf(posX,posY);
-//                break;
-//            case 1 :
-//                enemy = new Dragonet(posX,posY);
-//                break;
-//            case 2 :
-//                enemy = new Orc(posX,posY);
-//        }
-//        map.addMonster(enemy);
-//    }
 
     private void gameLoop() {
+        initGame();
         while (!hero.isDead() && map.getNumberOfMonster()>0) {
             mapExploration();
             enemy = map.getNearbyMonster();

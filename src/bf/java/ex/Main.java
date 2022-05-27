@@ -9,7 +9,7 @@ public class Main {
 
         //demo(Map::Deplacer)
         //demo(pos -> map.deplacer);
-        demo(System.out::println);
+        //demo(System.out::println);
     }
 
     public static void demo(Action<Integer> action) {

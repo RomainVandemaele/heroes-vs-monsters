@@ -1,19 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="978b556b-e4dc-41b6-b0b2-47b0823d7065" name="Changes" comment="New concrete command for moving and fighting + yu can move in the map and start figths. Input more secure with regex.">
-      <change afterPath="$PROJECT_DIR$/src/bf/java/ex/delegate/MobCreator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/bf/java/ex/delegate/MonstersCreator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/bf/java/ex/delegate/SpellCommand.java" afterDir="false" />
+    <list default="true" id="978b556b-e4dc-41b6-b0b2-47b0823d7065" name="Changes" comment="New command for spell + start of Factory">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/bf/java/ex/GameMaster.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bf/java/ex/GameMaster.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bf/java/ex/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bf/java/ex/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/bf/java/ex/Map.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bf/java/ex/Map.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/bf/java/ex/Spell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bf/java/ex/Spell.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bf/java/ex/delegate/FightCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bf/java/ex/delegate/FightCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bf/java/ex/mob/Character.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bf/java/ex/mob/Character.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bf/java/ex/mob/Dwarf.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bf/java/ex/mob/Dwarf.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bf/java/ex/mob/Hero.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bf/java/ex/mob/Hero.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bf/java/ex/mob/Human.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bf/java/ex/mob/Human.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bf/java/ex/delegate/MobCreator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bf/java/ex/delegate/MobCreator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bf/java/ex/delegate/MonstersCreator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bf/java/ex/delegate/MonstersCreator.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,7 +76,8 @@
       <workItem from="1653405087621" duration="251000" />
       <workItem from="1653405618385" duration="16275000" />
       <workItem from="1653485213764" duration="1954000" />
-      <workItem from="1653588218807" duration="10439000" />
+      <workItem from="1653588218807" duration="10496000" />
+      <workItem from="1653629908443" duration="5745000" />
     </task>
     <task id="LOCAL-00001" summary="init projet heroes vs monsters">
       <created>1653405201243</created>
@@ -104,7 +100,14 @@
       <option name="project" value="LOCAL" />
       <updated>1653591340936</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="New command for spell + start of Factory">
+      <created>1653598711318</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1653598711318</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -125,6 +128,8 @@
     <MESSAGE value="init projet heroes vs monsters" />
     <MESSAGE value="new classes and interfaces + Dice class implementation" />
     <MESSAGE value="New concrete command for moving and fighting + yu can move in the map and start figths. Input more secure with regex." />
-    <option name="LAST_COMMIT_MESSAGE" value="New concrete command for moving and fighting + yu can move in the map and start figths. Input more secure with regex." />
+    <MESSAGE value="New command for spell" />
+    <MESSAGE value="New command for spell + start of Factory" />
+    <option name="LAST_COMMIT_MESSAGE" value="New command for spell + start of Factory" />
   </component>
 </project>
