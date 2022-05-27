@@ -21,6 +21,7 @@ public class Spell {
     }
 
     private void generateName()  {
+        // TODO: 5/27/22 Sometime no name  
         try {
             File file = new File("src/bf/java/ex/spellNames.txt");
             FileReader fileReader = new FileReader(file);

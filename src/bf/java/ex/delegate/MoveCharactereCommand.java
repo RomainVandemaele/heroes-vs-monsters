@@ -1,7 +1,6 @@
 package bf.java.ex.delegate;
 
-import bf.java.ex.Map;
-import bf.java.ex.delegate.Command;
+import bf.java.ex.map.Map;
 
 public class MoveCharactereCommand extends Command<Map> {
 

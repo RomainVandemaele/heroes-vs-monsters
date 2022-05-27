@@ -2,14 +2,20 @@ package bf.java.ex.mob;
 
 import bf.java.ex.Spell;
 import bf.java.ex.mob.Character;
+import bf.java.ex.shop.Item;
+
+import java.util.ArrayList;
 
 public abstract class Hero extends Character {
 
     private int mp;
     private Spell spell;
+
+    private ArrayList<Item> items;
+
     public Hero(int posX,int posY) {
         super(posX, posY);
-        mp = d6.throwDice();
+        mp = d6.throwDice() + d6.throwDice() + d6.throwDice();
         spell = new Spell();
     }
 
@@ -20,6 +26,10 @@ public abstract class Hero extends Character {
     //public void throwSpell(int index) {
     //    if(spells[index]!=null) {}
     //}
+
+    public void addItem(Item item) {
+        items.add(item);
+    }
 
     public void throwSpell(Character enemy) {
         if(canThrowSpell()) {

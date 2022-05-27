@@ -4,8 +4,11 @@ import bf.java.ex.delegate.Command;
 import bf.java.ex.delegate.FightCommand;
 import bf.java.ex.delegate.MoveCharactereCommand;
 import bf.java.ex.delegate.SpellCommand;
+import bf.java.ex.map.Map;
 import bf.java.ex.mob.*;
+import bf.java.ex.shop.Shop;
 
+import java.io.IOException;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -25,8 +28,6 @@ public class GameMaster {
     Scanner myScanner = new Scanner(System.in);
 
     public GameMaster() {
-
-        initGame();
         gameLoop();
     }
 
@@ -60,14 +61,20 @@ public class GameMaster {
     private void mapExploration() {
         while (!map.isNearMonster()) {
             map.display();
-            System.out.printf("In which direction would you like to move ? (z;q;s;d)");
-            while (!myScanner.hasNext("[zqsd]")) {
+            System.out.printf("In which direction would you like to move  or go to shop(b)? (z;q;s;d)");
+            while (!myScanner.hasNext("[zqsdb]")) {
                 System.out.println("Invalid direction! Try again :");
                 myScanner.next();
             }
             char decision = myScanner.next().charAt(0);
-            command = new MoveCharactereCommand(map,decision);
-            command.execute();
+            if(decision=='b') {
+                Shop shop= new Shop(hero);
+                shop.shopInterface();
+            }else {
+                command = new MoveCharactereCommand(map,decision);
+                command.execute();
+            }
+
         }
     }
 
@@ -88,7 +95,7 @@ public class GameMaster {
         hero.restoreHealth();
     }
 
-    private void fightTurn() {
+    private void fightTurn()  {
 
         System.out.printf("\nYour current stats are :\nFOR : %d END : %d HP : %d/%d MP %d.\n",hero.getForce(),hero.getEndurance(),hero.getHp(),hero.getMaxHealth(),hero.getMp());
         System.out.printf("The %s has now %d/%d HP left\n",enemy.getName(),enemy.getHp(),enemy.getMaxHealth());
@@ -114,37 +121,45 @@ public class GameMaster {
         System.out.printf("The %s has now %d/%d HP left\n\n",enemy.getName(),enemy.getHp(),enemy.getMaxHealth());
         if(!enemy.isDead()) {
             System.out.printf("The %s is ready to attack.\n",enemy.getName());
-            System.out.printf("Press 1 to continue to the %s turn",enemy.getName());
-            while(!myScanner.hasNext("[1]")) {
-                myScanner.next();
-            }
-            myScanner.next();
+            System.out.printf("Press Enter to continue to the %s turn : ",enemy.getName());
+            try { System.in.read();
+            } catch (IOException e) {throw new RuntimeException(e); }
+
             command = new FightCommand(enemy,hero);
             command.execute();
             //System.out.printf("The %s did %s damages.\n",enemy.getName(),damage);
             System.out.printf("You now have %d/%d HP left\n\n\n",hero.getHp(),hero.getMaxHealth());
 
-            System.out.printf("Press 1 to continue to the next turn",enemy.getName());
-            while(!myScanner.hasNext("[1]")) {
-                myScanner.next();
+            if(!hero.isDead()) {
+                System.out.printf("Press Enter to continue to the next turn : ",enemy.getName());
+                try { System.in.read();
+                } catch (IOException e) {throw new RuntimeException(e); }
+
             }
-            myScanner.next();
+
         }
     }
 
     public void initGame() {
         map = new Map(15);
-        generateHero();
-        map.setHero(hero);
         System.out.println("Welcome To the forest of Shorewood in the land of StormWall.\n");
         System.out.printf("Here you may encounters %d monsters like orcs, wolfs and dragonets.\n",map.getNumberOfMonster());
         System.out.println("But first let's talk about you :\n");
+        generateHero();
+        map.setHero(hero);
     }
 
     private void endGame() {
-        System.out.println("You have met your end.");
-        System.out.printf("During your life as an hero you slained %d monsters.\nYou also collected %d golds and %d leathers.\n",enemyCount,hero.getGold(),hero.getLeather());
-        System.out.println("May you have better results next time.");
+        if(hero.isDead()) {
+            System.out.println("You have met your end.");
+            System.out.printf("During your life as an hero you slained %d monsters.\nYou also collected %d golds and %d leathers.\n",enemyCount,hero.getGold(),hero.getLeather());
+            System.out.println("May you have better results next time.");
+        }else {
+            System.out.println("CONGRATULATIONS.\n");
+            System.out.println("All monsters have been defeated and the forest of Shorewood is now in peace\n");
+            System.out.printf("During your journey as an hero you slained %d monsters.\nYou also collected %d golds and %d leathers.\n",enemyCount,hero.getGold(),hero.getLeather());
+        }
+
     }
 
 }

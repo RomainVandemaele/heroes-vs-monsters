@@ -8,8 +8,6 @@ public class Human extends Hero {
 
     public Human(int posX,int posY) {
         super(posX,posY);
-        //maxHealth = getEndurance() + computeModifier(getEndurance()+END_BONUS);
-        //restoreHealth();
     }
     @Override
     public int getDamage() {

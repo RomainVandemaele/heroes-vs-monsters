@@ -12,9 +12,7 @@ public class MonstersCreator implements MobCreator<Monster> {
 
     //ArrayList<Monster> monsters;
 
-    public MonstersCreator() {
-
-    }
+    public MonstersCreator() {}
 
     @Override
     public Monster createMobs(int posX,int posY) {
