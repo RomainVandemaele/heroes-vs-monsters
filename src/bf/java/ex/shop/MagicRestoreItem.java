@@ -9,9 +9,14 @@ public class MagicRestoreItem extends Item{
     }
 
     @Override
-    public int getBoost() {
-        return mpGain;
+    public void applyEffect() {
+        if(receiver !=null) {
+            receiver.addMp(mpGain);
+            System.out.printf("You gain %d MP which means you now have %d MP.\n",mpGain,receiver.getMp());
+        }
     }
+
+
 
     @Override
     public Item clone() {

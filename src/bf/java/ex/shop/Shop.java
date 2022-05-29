@@ -6,17 +6,18 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Shop {
-    ArrayList<Item> items;
+    private ArrayList<Item> items;
 
-    Hero client;
+    private Hero client;
 
     public Shop(Hero client) {
         items = new ArrayList<Item>();
         items.add(new HealingItem("Potion",3,5));
         items.add(new HealingItem("Super potion",5,10));
         items.add(new MagicRestoreItem("Ether",5,8));
-        items.add(new DamageItem("Shuriken",5,5));
-        items.add(new DamageItem("Gold shuriken",10,10));
+        this.client = client;
+        //items.add(new DamageItem("Shuriken",5,5));
+        //items.add(new DamageItem("Gold shuriken",10,10));
     }
 
     public Item buyItem(int i) {
@@ -25,13 +26,14 @@ public class Shop {
 
     public void listItems() {
         for(int i= 0;i<items.size();++i) {
-            System.out.printf("%d : %s ",i+1,items.get(i));
+            System.out.printf("%d : %s",i+1,items.get(i));
         }
     }
 
     public void shopInterface() {
 
         listItems();
+        System.out.printf("You have %d gold\n",client.getGold());
         System.out.println("Choose the item you want or return(0) to you journey?");
         Scanner myScanner = new Scanner(System.in);
         while (!myScanner.hasNext("[0-"+ String.valueOf(items.size()) + "]" )  ) {
@@ -42,7 +44,9 @@ public class Shop {
         if(chosenIndex!=0) {
             if(client.getGold() >= items.get(chosenIndex).getPrice()) {
                 System.out.printf("You choose to buy %s.\n",items.get(chosenIndex-1).name);
-                client.addItem( buyItem(chosenIndex-1) );
+                Item broughtItem = buyItem(chosenIndex-1);
+                client.addItem( broughtItem );
+                broughtItem.setReceiver(client);
             }else {
                 System.out.println("You don't have enough money. get out.\n");
             }

@@ -10,8 +10,11 @@ public class HealingItem extends Item {
     }
 
     @Override
-    public int getBoost() {
-        return hpGain;
+    public void applyEffect() {
+        if(receiver != null) {
+            receiver.addHp(hpGain);
+            System.out.printf("You gain %d HP which means you now have %d HP.\n",hpGain,receiver.getHp());
+        }
     }
 
     @Override

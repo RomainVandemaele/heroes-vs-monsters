@@ -8,8 +8,8 @@ public class DamageItem extends Item {
         this.damage = damage;
     }
 
-    public int getBoost() {
-        return damage;
+    public void applyEffect() {
+
     }
 
     @Override

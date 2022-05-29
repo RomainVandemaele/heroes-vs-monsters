@@ -1,9 +1,6 @@
 package bf.java.ex;
 
-import bf.java.ex.delegate.Command;
-import bf.java.ex.delegate.FightCommand;
-import bf.java.ex.delegate.MoveCharactereCommand;
-import bf.java.ex.delegate.SpellCommand;
+import bf.java.ex.delegate.*;
 import bf.java.ex.map.Map;
 import bf.java.ex.mob.*;
 import bf.java.ex.shop.Shop;
@@ -26,6 +23,7 @@ public class GameMaster {
     private Command command;
 
     Scanner myScanner = new Scanner(System.in);
+    private Shop shop;
 
     public GameMaster() {
         gameLoop();
@@ -68,7 +66,6 @@ public class GameMaster {
             }
             char decision = myScanner.next().charAt(0);
             if(decision=='b') {
-                Shop shop= new Shop(hero);
                 shop.shopInterface();
             }else {
                 command = new MoveCharactereCommand(map,decision);
@@ -100,8 +97,8 @@ public class GameMaster {
         System.out.printf("\nYour current stats are :\nFOR : %d END : %d HP : %d/%d MP %d.\n",hero.getForce(),hero.getEndurance(),hero.getHp(),hero.getMaxHealth(),hero.getMp());
         System.out.printf("The %s has now %d/%d HP left\n",enemy.getName(),enemy.getHp(),enemy.getMaxHealth());
 
-        System.out.println("Are you ready to hit(1) or throw a spell(2)?(Y=1)");
-        while(!myScanner.hasNext("[1-2]")) {
+        System.out.println("Are you ready to hit(1), throw a spell(2) or use an item(3)?");
+        while(!myScanner.hasNext("[1-3]")) {
             System.out.println("Are you ready to hit?(Y=1)");
             myScanner.next();
         }
@@ -114,6 +111,10 @@ public class GameMaster {
                 break;
             case '2' :
                 command = new SpellCommand(hero,enemy);
+                command.execute();
+                break;
+            case '3' :
+                command = new UseItemCommand(hero);
                 command.execute();
                 break;
         }
@@ -147,6 +148,7 @@ public class GameMaster {
         System.out.println("But first let's talk about you :\n");
         generateHero();
         map.setHero(hero);
+        shop = new Shop(hero);
     }
 
     private void endGame() {
