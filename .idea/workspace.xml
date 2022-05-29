@@ -1,17 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="978b556b-e4dc-41b6-b0b2-47b0823d7065" name="Changes" comment="Shop that sell items items + shop wit prototype design pattern. Shop in map + to do : possibility to use item in fight">
-      <change afterPath="$PROJECT_DIR$/src/bf/java/ex/delegate/UseItemCommand.java" afterDir="false" />
+    <list default="true" id="978b556b-e4dc-41b6-b0b2-47b0823d7065" name="Changes" comment="you can use item brought in thee shop during fight">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/bf/java/ex/GameMaster.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bf/java/ex/GameMaster.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bf/java/ex/delegate/FightCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bf/java/ex/delegate/FightCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bf/java/ex/mob/Character.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bf/java/ex/mob/Character.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bf/java/ex/mob/Dragonet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bf/java/ex/mob/Dragonet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/bf/java/ex/mob/Hero.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bf/java/ex/mob/Hero.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bf/java/ex/shop/DamageItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bf/java/ex/shop/DamageItem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bf/java/ex/shop/HealingItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bf/java/ex/shop/HealingItem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bf/java/ex/shop/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bf/java/ex/shop/Item.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bf/java/ex/shop/MagicRestoreItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bf/java/ex/shop/MagicRestoreItem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bf/java/ex/shop/Shop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bf/java/ex/shop/Shop.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bf/java/ex/mob/Orc.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bf/java/ex/mob/Orc.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,7 +78,7 @@
       <workItem from="1653588218807" duration="10496000" />
       <workItem from="1653629908443" duration="25156000" />
       <workItem from="1653675857876" duration="1287000" />
-      <workItem from="1653809090694" duration="6159000" />
+      <workItem from="1653809090694" duration="9772000" />
     </task>
     <task id="LOCAL-00001" summary="init projet heroes vs monsters">
       <created>1653405201243</created>
@@ -126,7 +122,14 @@
       <option name="project" value="LOCAL" />
       <updated>1653675938750</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="you can use item brought in thee shop during fight">
+      <created>1653824663028</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1653824663028</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -151,16 +154,12 @@
     <MESSAGE value="New command for spell + start of Factory" />
     <MESSAGE value="Factory for generating monsters used by Map" />
     <MESSAGE value="Shop that sell items items + shop wit prototype design pattern. Shop in map + to do : possibility to use item in fight" />
-    <option name="LAST_COMMIT_MESSAGE" value="Shop that sell items items + shop wit prototype design pattern. Shop in map + to do : possibility to use item in fight" />
+    <MESSAGE value="you can use item brought in thee shop during fight" />
+    <option name="LAST_COMMIT_MESSAGE" value="you can use item brought in thee shop during fight" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/bf/java/ex/mob/Hero.java</url>
-          <line>99</line>
-          <option name="timeStamp" value="18" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/bf/java/ex/shop/HealingItem.java</url>
           <line>14</line>

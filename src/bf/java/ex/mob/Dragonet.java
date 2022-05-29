@@ -2,7 +2,7 @@ package bf.java.ex.mob;
 
 public class Dragonet extends Monster {
 
-    private static int END_BONUS = 1;
+    private static final int END_BONUS = 1;
 
     public Dragonet(int posX,int posY) {
         super(posX,posY);

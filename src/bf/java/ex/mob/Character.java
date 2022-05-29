@@ -4,9 +4,9 @@ import bf.java.ex.Dice;
 
 public abstract class Character {
     protected int hp;
-    private int maxHealth;
-    private int endurance;
-    private int force;
+    private final int MAX_HP;
+    private final int ENDURANCE;
+    private final int FORCE;
     protected Dice d4;
     protected Dice d6;
 
@@ -20,10 +20,12 @@ public abstract class Character {
         d4 = new Dice(1,4);
         d6 = new Dice(1,6);
         int minEndurance = 6;
+        int endurance = 0;
         int minForce = 6;
+        int force = 0;
         for(int i=0;i<4;i++) {
             int tEnd = d6.throwDice();
-            endurance += tEnd;
+            endurance += d6.throwDice();
             if(tEnd < minEndurance) {
                 minEndurance = tEnd;
             }
@@ -33,10 +35,10 @@ public abstract class Character {
                 minForce = tFor;
             }
         }
-        endurance -=minEndurance;
-        force -= minForce;
-        maxHealth = endurance + computeModifier(endurance);
-        hp = maxHealth;
+        ENDURANCE = endurance - minEndurance;
+        FORCE = force - minForce;
+        MAX_HP = ENDURANCE + computeModifier(ENDURANCE);
+        hp = MAX_HP;
 
         positionX = posX;
         positionY = posY;
@@ -55,7 +57,7 @@ public abstract class Character {
         return positionY;
     }
 
-    public int computeModifier(int value) {
+    protected int computeModifier(int value) {
         int modifier = -1 + value/5;
         if(value < 5) {
             modifier = -1;
@@ -73,8 +75,8 @@ public abstract class Character {
         return d4.throwDice();
     }
 
-    public int getDamage() {
-        return getBaseDamage() + computeModifier(force);
+    protected int getDamage() {
+        return getBaseDamage() + computeModifier(FORCE);
     }
 
     public void hit(Character enemy) {
@@ -93,19 +95,19 @@ public abstract class Character {
     }
 
     public int getEndurance() {
-        return endurance;
+        return ENDURANCE;
     }
 
     public int getForce() {
-        return force;
+        return FORCE;
     }
 
     public int getHp() {
         return hp;
     }
 
-    public int getMaxHealth() {
-        return maxHealth;
+    public int getMacHealth() {
+        return MAX_HP;
     }
 
     public int getLeather() {

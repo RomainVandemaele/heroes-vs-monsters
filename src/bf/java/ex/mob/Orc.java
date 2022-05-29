@@ -4,7 +4,7 @@ import bf.java.ex.mob.Monster;
 
 public class Orc extends Monster {
 
-    private static int FOR_BONUS = 1;
+    private static final int FOR_BONUS = 1;
 
     public Orc(int posX,int posY) {
         super(posX,posY);

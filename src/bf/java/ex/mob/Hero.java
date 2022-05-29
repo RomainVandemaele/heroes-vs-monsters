@@ -25,24 +25,10 @@ public abstract class Hero extends Character {
 
 
     public void restoreHealth() {
-        hp = getMaxHealth();
-    }
-
-    public void addHp(int hp) {
-        this.hp = Math.min(this.hp + hp,getMaxHealth());
-    }
-    public void addMp(int mp) {
-        this.mp = Math.min(this.mp + mp,getMaxMagic());
-    }
-
-    public int getMaxMagic() {
-        return maxMagic;
+        hp = getMacHealth();
     }
 
 
-    //public void throwSpell(int index) {
-    //    if(spells[index]!=null) {}
-    //}
 
     public void addItem(Item item) {
         gold -= item.getPrice();
@@ -75,13 +61,6 @@ public abstract class Hero extends Character {
         }
     }
 
-    public int getMp() {
-        return mp;
-    }
-
-    public boolean canThrowSpell() {
-        return spell.getMpCost() <= mp;
-    }
 
     @Override
     public void hit(Character enemy) {
@@ -92,12 +71,29 @@ public abstract class Hero extends Character {
         }
     }
 
+    public void addHp(int hp) {
+        this.hp = Math.min(this.hp + hp, getMacHealth());
+    }
+    public void addMp(int mp) {
+        this.mp = Math.min(this.mp + mp,getMaxMagic());
+    }
+
     private void addGold(int gold) {
         this.gold += gold;
     }
 
-    private void addLeather(int leather) {
-        this.leather += leather;
+    private void addLeather(int leather) {this.leather += leather;}
+
+    public int getMp() {
+        return mp;
+    }
+
+    public int getMaxMagic() {
+        return maxMagic;
+    }
+
+    public boolean canThrowSpell() {
+        return spell.getMpCost() <= mp;
     }
 
     @Override

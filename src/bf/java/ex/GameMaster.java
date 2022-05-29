@@ -94,8 +94,8 @@ public class GameMaster {
 
     private void fightTurn()  {
 
-        System.out.printf("\nYour current stats are :\nFOR : %d END : %d HP : %d/%d MP %d.\n",hero.getForce(),hero.getEndurance(),hero.getHp(),hero.getMaxHealth(),hero.getMp());
-        System.out.printf("The %s has now %d/%d HP left\n",enemy.getName(),enemy.getHp(),enemy.getMaxHealth());
+        System.out.printf("\nYour current stats are :\nFOR : %d END : %d HP : %d/%d MP %d.\n",hero.getForce(),hero.getEndurance(),hero.getHp(),hero.getMacHealth(),hero.getMp());
+        System.out.printf("The %s has now %d/%d HP left\n",enemy.getName(),enemy.getHp(),enemy.getMacHealth());
 
         System.out.println("Are you ready to hit(1), throw a spell(2) or use an item(3)?");
         while(!myScanner.hasNext("[1-3]")) {
@@ -119,7 +119,7 @@ public class GameMaster {
                 break;
         }
 
-        System.out.printf("The %s has now %d/%d HP left\n\n",enemy.getName(),enemy.getHp(),enemy.getMaxHealth());
+        System.out.printf("The %s has now %d/%d HP left\n\n",enemy.getName(),enemy.getHp(),enemy.getMacHealth());
         if(!enemy.isDead()) {
             System.out.printf("The %s is ready to attack.\n",enemy.getName());
             System.out.printf("Press Enter to continue to the %s turn : ",enemy.getName());
@@ -129,7 +129,7 @@ public class GameMaster {
             command = new FightCommand(enemy,hero);
             command.execute();
             //System.out.printf("The %s did %s damages.\n",enemy.getName(),damage);
-            System.out.printf("You now have %d/%d HP left\n\n\n",hero.getHp(),hero.getMaxHealth());
+            System.out.printf("You now have %d/%d HP left\n\n\n",hero.getHp(),hero.getMacHealth());
 
             if(!hero.isDead()) {
                 System.out.printf("Press Enter to continue to the next turn : ",enemy.getName());
