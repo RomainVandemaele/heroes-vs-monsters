@@ -1,7 +1,7 @@
 package bf.java.ex.delegate;
 
 public abstract class Command<T> {
-    public T receiver;
+    protected T receiver;
 
     public Command(T receiver) {
         this.receiver = receiver;

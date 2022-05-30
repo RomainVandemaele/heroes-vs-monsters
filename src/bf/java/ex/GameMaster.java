@@ -6,16 +6,16 @@ import bf.java.ex.mob.*;
 import bf.java.ex.shop.Shop;
 
 import java.io.IOException;
+import java.security.SecureRandom;
 import java.util.Random;
 import java.util.Scanner;
 
 public class GameMaster {
 
-    private static final int N_ENEMIES = 10;
     private Hero hero;
     private Monster enemy;
     private int enemyCount = 0;
-    private Random r = new Random();
+    private SecureRandom r = new SecureRandom();
 
     private Map map;
 

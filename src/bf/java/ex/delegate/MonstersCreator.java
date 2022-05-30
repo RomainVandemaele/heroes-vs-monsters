@@ -10,7 +10,6 @@ import java.util.ArrayList;
 
 public class MonstersCreator implements MobCreator<Monster> {
 
-    //ArrayList<Monster> monsters;
 
     public MonstersCreator() {}
 

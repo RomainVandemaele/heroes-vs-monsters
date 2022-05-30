@@ -19,7 +19,6 @@ public class FightCommand extends Command<Character> {
 
     @Override
     public void execute() {
-
         receiver.hit(enemy);
     }
 }
