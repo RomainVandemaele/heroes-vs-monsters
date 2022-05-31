@@ -6,6 +6,7 @@ import bf.java.ex.mob.*;
 
 import java.security.SecureRandom;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Iterator;
 import java.lang.Math;
 
@@ -120,6 +121,12 @@ public class Map {
 
     public void setHero(Hero hero) {
         this.hero = hero;
+        while(squares[hero.getPositionY()][hero.getPositionX()].hasCharacter()) {
+            SecureRandom sr = new SecureRandom();
+            int newPosX = sr.nextInt(SIZE);
+            int newPosY = sr.nextInt(SIZE);
+            hero.changePosition(newPosX,newPosY);
+        }
         squares[hero.getPositionY()][hero.getPositionX()].setCharacter(hero);
     }
 
@@ -127,6 +134,7 @@ public class Map {
         Boolean isNear = false;
         int heroX = hero.getPositionX();
         int heroY = hero.getPositionY();
+
 
         Iterator<Monster> it = monsters.iterator();
         while (it.hasNext() && !isNear) {
@@ -176,10 +184,9 @@ public class Map {
     }
 
     public void display() {
+
         for (int i=0;i<SIZE;++i) {
-            for(int j=0;j<SIZE;++j) {
-                System.out.printf("%s ",squares[i][j]);
-            }
+            Arrays.stream(squares[i]).forEach( value -> System.out.printf("%s ",value));
             System.out.printf("\n");
         }
     }

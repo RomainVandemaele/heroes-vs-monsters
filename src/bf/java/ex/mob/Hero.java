@@ -1,6 +1,7 @@
 package bf.java.ex.mob;
 
 import bf.java.ex.Spell;
+import bf.java.ex.shop.DamageItem;
 import bf.java.ex.shop.Item;
 
 import java.util.ArrayList;
@@ -12,14 +13,16 @@ public abstract class Hero extends Character {
     private int maxMagic;
     private Spell spell;
 
-    private ArrayList<Item> items;
+    private ArrayList<Item> inventory;
 
     public Hero(int posX,int posY) {
         super(posX, posY);
         maxMagic = d6.throwDice() + d6.throwDice() + d6.throwDice();
         mp = maxMagic;
         spell = new Spell();
-        items = new ArrayList<Item>();
+        inventory = new ArrayList<Item>();
+
+        gold = 10;
     }
 
 
@@ -28,26 +31,33 @@ public abstract class Hero extends Character {
         hp = getMacHealth();
     }
 
-
-
     public void addItem(Item item) {
         gold -= item.getPrice();
-        items.add(item);
+        inventory.add(item);
     }
 
-    public void UseItem() {
-        for(int i= 0;i<items.size();++i) {
-            System.out.printf("%d : %s ",i+1,items.get(i));
+    public void UseItem(Monster enemy) {
+        for(int i = 0; i< inventory.size(); ++i) {
+            System.out.printf("%d : %s ",i+1, inventory.get(i));
         }
 
-        System.out.println("Choose the item you want or return(0) to you fight?");
-        Scanner myScanner = new Scanner(System.in);
-        while (!myScanner.hasNext("[1-"+ String.valueOf(items.size()) + "]" )  ) {
-            System.out.println("Have another try\n");
-            myScanner.next();
+        if(inventory.size() > 0) {
+            System.out.println("Choose the item you want or return(0) to you fight?");
+            Scanner myScanner = new Scanner(System.in);
+            while (!myScanner.hasNext("[1-"+ String.valueOf(inventory.size()) + "]" )  ) {
+                System.out.println("Have another try\n");
+                myScanner.next();
+            }
+            int chosenIndex = myScanner.nextInt();
+            Item item = inventory.get(chosenIndex-1);
+            if(item instanceof DamageItem) {
+                ((DamageItem) item).setReceiver(enemy);
+            }
+            item.applyEffect();
+        }else {
+            System.out.println("You have no item.");
         }
-        int chosenIndex = myScanner.nextInt();
-        items.get(chosenIndex-1).applyEffect();
+
     }
 
     public void throwSpell(Character enemy) {
@@ -65,6 +75,16 @@ public abstract class Hero extends Character {
     @Override
     public void hit(Character enemy) {
         super.hit(enemy);
+        getLoot(enemy);
+    }
+
+
+    public void hit(Character enemy,final int damage) {
+        enemy.getHit(damage);
+        getLoot(enemy);
+    }
+
+    private void getLoot(Character enemy) {
         if(enemy.isDead()) {
             addGold(enemy.getGold());
             addLeather(enemy.getLeather());

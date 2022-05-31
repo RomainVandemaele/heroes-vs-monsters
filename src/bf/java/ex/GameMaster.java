@@ -43,6 +43,7 @@ public class GameMaster {
         } else if (answer==2) {
             hero = new Dwarf(posX,posY);
         }
+        map.setHero(hero);
     }
 
 
@@ -71,7 +72,6 @@ public class GameMaster {
                 command = new MoveCharactereCommand(map,decision);
                 command.execute();
             }
-
         }
     }
 
@@ -114,8 +114,8 @@ public class GameMaster {
                 command.execute();
                 break;
             case '3' :
-                command = new UseItemCommand(hero);
-                command.execute();
+                UseItemCommand command = new UseItemCommand(hero);
+                command.execute(enemy);
                 break;
         }
 
@@ -128,8 +128,6 @@ public class GameMaster {
 
             command = new FightCommand(enemy,hero);
             command.execute();
-            //System.out.printf("The %s did %s damages.\n",enemy.getName(),damage);
-            System.out.printf("You now have %d/%d HP left\n\n\n",hero.getHp(),hero.getMacHealth());
 
             if(!hero.isDead()) {
                 System.out.printf("Press Enter to continue to the next turn : ",enemy.getName());
@@ -147,7 +145,6 @@ public class GameMaster {
         System.out.printf("Here you may encounters %d monsters like orcs, wolfs and dragonets.\n",map.getNumberOfMonster());
         System.out.println("But first let's talk about you :\n");
         generateHero();
-        map.setHero(hero);
         shop = new Shop(hero);
     }
 

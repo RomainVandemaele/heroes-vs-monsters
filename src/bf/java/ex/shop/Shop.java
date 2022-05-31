@@ -11,13 +11,13 @@ public class Shop {
     private Hero client;
 
     public Shop(Hero client) {
+        this.client = client;
         items = new ArrayList<Item>();
         items.add(new HealingItem("Potion",3,5));
         items.add(new HealingItem("Super potion",5,10));
         items.add(new MagicRestoreItem("Ether",5,8));
-        this.client = client;
-        //items.add(new DamageItem("Shuriken",5,5));
-        //items.add(new DamageItem("Gold shuriken",10,10));
+        items.add(new DamageItem("Shuriken",5,5));
+        items.add(new DamageItem("Gold shuriken",10,10));
     }
 
     public Item buyItem(int i) {
@@ -40,13 +40,13 @@ public class Shop {
             System.out.println("Have another try\n");
             myScanner.next();
         }
-        int chosenIndex = myScanner.nextInt();
+        int chosenIndex = myScanner.nextInt()-1;
         if(chosenIndex!=0) {
             if(client.getGold() >= items.get(chosenIndex).getPrice()) {
                 System.out.printf("You choose to buy %s.\n",items.get(chosenIndex-1).name);
-                Item broughtItem = buyItem(chosenIndex-1);
+                Item broughtItem = buyItem(chosenIndex);
                 client.addItem( broughtItem );
-                broughtItem.setReceiver(client);
+                broughtItem.setOwner(client);
             }else {
                 System.out.println("You don't have enough money. get out.\n");
             }

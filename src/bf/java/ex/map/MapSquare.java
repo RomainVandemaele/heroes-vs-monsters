@@ -9,6 +9,9 @@ public abstract class MapSquare {
         this.character = character;
     }
 
+    public boolean hasCharacter() {
+        return character!=null;
+    }
 
     public abstract String toString();
 }

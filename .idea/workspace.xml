@@ -1,11 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="978b556b-e4dc-41b6-b0b2-47b0823d7065" name="Changes" comment=" uml diagrams">
-      <change afterPath="$PROJECT_DIR$/uml/heroesMonsters.mdj" afterDir="false" />
+    <list default="true" id="978b556b-e4dc-41b6-b0b2-47b0823d7065" name="Changes" comment="cleaning files">
+      <change afterPath="$PROJECT_DIR$/src/bf/java/ex/shop/Armor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bf/java/ex/GameMaster.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bf/java/ex/GameMaster.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/bf/java/ex/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bf/java/ex/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bf/java/ex/delegate/HeroCreator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bf/java/ex/delegate/MonstersCreator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bf/java/ex/delegate/MonstersCreator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bf/java/ex/delegate/UseItemCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bf/java/ex/delegate/UseItemCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bf/java/ex/map/Map.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bf/java/ex/map/Map.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bf/java/ex/map/MapSquare.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bf/java/ex/map/MapSquare.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bf/java/ex/mob/Hero.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bf/java/ex/mob/Hero.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bf/java/ex/shop/DamageItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bf/java/ex/shop/DamageItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bf/java/ex/shop/HealingItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bf/java/ex/shop/HealingItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bf/java/ex/shop/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bf/java/ex/shop/Item.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bf/java/ex/shop/MagicRestoreItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bf/java/ex/shop/MagicRestoreItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bf/java/ex/shop/Shop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bf/java/ex/shop/Shop.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,7 +87,10 @@
       <workItem from="1653629908443" duration="25156000" />
       <workItem from="1653675857876" duration="1287000" />
       <workItem from="1653809090694" duration="17355000" />
-      <workItem from="1653922915895" duration="1918000" />
+      <workItem from="1653922915895" duration="3140000" />
+      <workItem from="1653933316013" duration="642000" />
+      <workItem from="1653975446736" duration="2248000" />
+      <workItem from="1653989171226" duration="9954000" />
     </task>
     <task id="LOCAL-00001" summary="init projet heroes vs monsters">
       <created>1653405201243</created>
@@ -142,7 +155,14 @@
       <option name="project" value="LOCAL" />
       <updated>1653924198769</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="cleaning files">
+      <created>1653929194747</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1653929194747</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -171,18 +191,8 @@
     <MESSAGE value="refactoting mob classes : renaming , scope changes" />
     <MESSAGE value="refactoting classes : renaming , scope changes + uml diagrams" />
     <MESSAGE value=" uml diagrams" />
-    <option name="LAST_COMMIT_MESSAGE" value=" uml diagrams" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/bf/java/ex/shop/HealingItem.java</url>
-          <line>14</line>
-          <option name="timeStamp" value="22" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="cleaning files" />
+    <option name="LAST_COMMIT_MESSAGE" value="cleaning files" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Heroes_VS_Monsters$Main.ic" NAME="Main Coverage Results" MODIFIED="1653640496751" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">

@@ -6,15 +6,15 @@ public abstract class Item {
     protected int price;
     protected String name;
 
-    protected Hero receiver;
+    protected Hero owner;
 
     public Item(String name,int price) {
         this.name = name;
         this.price = price;
     }
 
-    public void setReceiver(Hero receiver) {
-        this.receiver = receiver;
+    public void setOwner(Hero owner) {
+        this.owner = owner;
     }
 
     public int getPrice() {

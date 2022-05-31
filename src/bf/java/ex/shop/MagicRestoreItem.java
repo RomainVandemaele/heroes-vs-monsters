@@ -10,9 +10,9 @@ public class MagicRestoreItem extends Item{
 
     @Override
     public void applyEffect() {
-        if(receiver !=null) {
-            receiver.addMp(mpGain);
-            System.out.printf("You gain %d MP which means you now have %d MP.\n",mpGain,receiver.getMp());
+        if(owner !=null) {
+            owner.addMp(mpGain);
+            System.out.printf("You gain %d MP which means you now have %d MP.\n",mpGain, owner.getMp());
         }
     }
 

@@ -10,7 +10,6 @@ import java.util.ArrayList;
 
 public class MonstersCreator implements MobCreator<Monster> {
 
-
     public MonstersCreator() {}
 
     @Override

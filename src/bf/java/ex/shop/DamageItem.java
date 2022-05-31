@@ -1,7 +1,10 @@
 package bf.java.ex.shop;
 
+import bf.java.ex.mob.Monster;
+
 public class DamageItem extends Item {
     private int damage;
+    private Monster receiver;
 
     public DamageItem(String name, int price,int damage) {
         super(name, price);
@@ -9,7 +12,13 @@ public class DamageItem extends Item {
     }
 
     public void applyEffect() {
+        if(receiver!=null) {
+            owner.hit(receiver,damage);
+        }
+    }
 
+    public void setReceiver(Monster receiver) {
+        this.receiver = receiver;
     }
 
     @Override

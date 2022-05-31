@@ -11,9 +11,9 @@ public class HealingItem extends Item {
 
     @Override
     public void applyEffect() {
-        if(receiver != null) {
-            receiver.addHp(hpGain);
-            System.out.printf("You gain %d HP which means you now have %d HP.\n",hpGain,receiver.getHp());
+        if(owner != null) {
+            owner.addHp(hpGain);
+            System.out.printf("You gain %d HP which means you now have %d HP.\n",hpGain, owner.getHp());
         }
     }
 
