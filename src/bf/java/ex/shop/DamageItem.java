@@ -13,7 +13,7 @@ public class DamageItem extends Item {
 
     public void applyEffect() {
         if(receiver!=null) {
-            owner.hit(receiver,damage);
+            getOwner().hit(receiver,damage);
         }
     }
 
@@ -23,13 +23,13 @@ public class DamageItem extends Item {
 
     @Override
     public Item clone() {
-        return new DamageItem(name,price,damage);
+        return new DamageItem(getName(),getPrice(),damage);
     }
 
     @Override
     public String toString() {
         StringBuilder print = new StringBuilder();
-        print.append(name+ " do ").append(damage).append(" damages price : ").append(price).append("\n");
+        print.append(getName()+ " do ").append(damage).append(" damages price : ").append(getPrice()).append("\n");
         return print.toString();
     }
 }

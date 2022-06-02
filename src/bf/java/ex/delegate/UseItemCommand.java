@@ -11,12 +11,11 @@ public class UseItemCommand extends Command<Hero> {
 
     @Override
     public void execute() {
-        System.out.println("print");
-        //receiver.UseItem();
+        receiver.UseItem();
     }
 
 
-    public void execute(Monster enemy) {
+    /*public void execute(Monster enemy) {
         receiver.UseItem(enemy);
-    }
+    }*/
 }

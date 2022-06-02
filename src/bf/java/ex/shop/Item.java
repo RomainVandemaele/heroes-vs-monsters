@@ -3,15 +3,26 @@ package bf.java.ex.shop;
 import bf.java.ex.mob.Hero;
 
 public abstract class Item {
-    protected int price;
-    protected String name;
-
-    protected Hero owner;
+    private int price;
+    private String name;
+    private Hero owner;
 
     public Item(String name,int price) {
         this.name = name;
         this.price = price;
     }
+
+    public String getName() {
+        return name;
+    }
+
+    public Hero getOwner() {
+        return owner;
+    }
+
+
+
+
 
     public void setOwner(Hero owner) {
         this.owner = owner;

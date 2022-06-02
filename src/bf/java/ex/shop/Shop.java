@@ -16,8 +16,8 @@ public class Shop {
         items.add(new HealingItem("Potion",3,5));
         items.add(new HealingItem("Super potion",5,10));
         items.add(new MagicRestoreItem("Ether",5,8));
-        items.add(new DamageItem("Shuriken",5,5));
-        items.add(new DamageItem("Gold shuriken",10,10));
+        //items.add(new DamageItem("Shuriken",5,5));
+        //items.add(new DamageItem("Gold shuriken",10,10));
     }
 
     public Item buyItem(int i) {
@@ -43,7 +43,7 @@ public class Shop {
         int chosenIndex = myScanner.nextInt()-1;
         if(chosenIndex!=0) {
             if(client.getGold() >= items.get(chosenIndex).getPrice()) {
-                System.out.printf("You choose to buy %s.\n",items.get(chosenIndex-1).name);
+                System.out.printf("You choose to buy %s.\n",items.get(chosenIndex-1).getName());
                 Item broughtItem = buyItem(chosenIndex);
                 client.addItem( broughtItem );
                 broughtItem.setOwner(client);

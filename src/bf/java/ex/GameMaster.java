@@ -115,7 +115,7 @@ public class GameMaster {
                 break;
             case '3' :
                 UseItemCommand command = new UseItemCommand(hero);
-                command.execute(enemy);
+                command.execute();
                 break;
         }
 

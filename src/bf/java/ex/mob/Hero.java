@@ -36,7 +36,7 @@ public abstract class Hero extends Character {
         inventory.add(item);
     }
 
-    public void UseItem(Monster enemy) {
+    public void UseItem() {
         for(int i = 0; i< inventory.size(); ++i) {
             System.out.printf("%d : %s ",i+1, inventory.get(i));
         }
@@ -50,9 +50,9 @@ public abstract class Hero extends Character {
             }
             int chosenIndex = myScanner.nextInt();
             Item item = inventory.get(chosenIndex-1);
-            if(item instanceof DamageItem) {
+            /*if(item instanceof DamageItem) {
                 ((DamageItem) item).setReceiver(enemy);
-            }
+            }*/
             item.applyEffect();
         }else {
             System.out.println("You have no item.");

@@ -10,9 +10,9 @@ public class MagicRestoreItem extends Item{
 
     @Override
     public void applyEffect() {
-        if(owner !=null) {
-            owner.addMp(mpGain);
-            System.out.printf("You gain %d MP which means you now have %d MP.\n",mpGain, owner.getMp());
+        if(getOwner() !=null) {
+            getOwner().addMp(mpGain);
+            System.out.printf("You gain %d MP which means you now have %d MP.\n",mpGain, getOwner().getMp());
         }
     }
 
@@ -20,13 +20,13 @@ public class MagicRestoreItem extends Item{
 
     @Override
     public Item clone() {
-        return new MagicRestoreItem(name,price,mpGain);
+        return new MagicRestoreItem(getName(),getPrice(),mpGain);
     }
 
     @Override
     public String toString() {
         StringBuilder print = new StringBuilder();
-        print.append(name+ " regain ").append(mpGain).append(" mp price : ").append(price).append("\n");
+        print.append(getName() + " regain ").append(mpGain).append(" mp price : ").append(getPrice()).append("\n");
         return print.toString();
     }
 }
